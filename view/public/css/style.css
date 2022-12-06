@@ -1,0 +1,161 @@
+body{
+  background:#F2F2F2 !important;
+  transition: 0.5s;
+}
+.navbar {
+  z-index: 99;
+}
+.to-top {
+  background: white;
+  position: fixed;
+  bottom: 16px;
+  right: 32px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #1f1f1f;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.4s;
+}
+
+.to-top.active {
+  bottom: 32px;
+  pointer-events: auto;
+  opacity: 1;
+} 
+.card-img-top{
+  object-fit: fill;
+}
+.text-reset:hover{
+  padding-left: 7px;
+  transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+ 
+}
+.codinh{
+  height: 500px;
+  overflow-y: auto;
+}
+/* cart*/
+.cart-page{
+  
+  display: flex;
+  justify-content: center;
+margin-top: 160px;
+}
+table{
+  width: 100%;
+  border-collapse:collapse ;
+}
+
+.cart-info{
+  display: flex;
+  flex-wrap: wrap;
+}
+td img{
+width: 80px;
+height: 80px;
+margin-right: 10px;
+}
+th{
+  text-align: left;
+  padding: 5px;
+  color: #fff;
+  background-color: #ff523b;
+  font-weight: normal;
+}
+td{
+  padding: 10px 5px;
+}
+td input{
+  width: 40px;
+  height: 30px;
+  padding: 5px;
+  
+}
+td a{
+  color: #ff523b;
+  font-size: 12px;
+  text-decoration: none;
+}
+.total-price{
+  
+  display: flex;
+  justify-content: flex-end;
+}
+.total-price table{
+  border-top:3px solid #ff523b ;
+  width: 100%;
+  max-width: 350px;
+}
+td:last-child{
+  text-align: right;
+}
+th:last-child{
+  text-align: right;
+}
+/* changeThame */
+.changeTheme{
+  
+  width:40px;
+  display: block;
+  height:15px;
+  background-color: #CBCBCB;
+  border-radius: 20px;
+  position: relative;
+  transition: 0.5s;
+}
+.changeTheme::before{
+  position: absolute;
+  left:0px;
+  
+  width:15px;
+  height:15px;
+  background-color: #fff;
+  box-shadow: 0 5px 10px #b5b4b4;
+  content:'';
+  border-radius: 20px;
+  transition: 0.5s;
+}
+.changeTheme input{
+  display: none;
+}
+.changeTheme:has(input:checked){
+  background-color: #4CB774;
+}
+.changeTheme:has(input:checked)::before{
+  left: calc(100% - 12px);
+}
+body:has(input[name="changeTheme"]:checked){
+  background-color: #555 !important;
+}
+.form-control{
+  height: 30px !important;
+}
+.btn-outline-dark{
+  height: 37px !important;
+  padding: 0px 5px !important;
+}
+.banner-header{
+  position: relative;
+}
+.g{
+  position: absolute;
+  top: 50%;
+}
+
+
+.h{
+  width: 20px !important;
+}
+.text-secondary{
+  color: red !important;
+}
+
+/* inpuu number */
+
