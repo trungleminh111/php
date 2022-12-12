@@ -16,7 +16,12 @@
 </head>
 
 <body>
-
+<style>
+    .a{
+        display: flex;
+        width: 160px;
+    }
+</style>
     <?php include 'inc/header.php'; ?>
     <!-------------car item details------------->
     <div class="cart my-5">
@@ -27,6 +32,7 @@
                     <th>Quantity</th>
                     <th>Subtotal</th>
                 </tr>
+
                 <?php $cart_list = get_cart() ?>
                 <?php foreach ($cart_list as $order_detail) { ?>
                     <!-- single cart -->
@@ -66,8 +72,10 @@
                         </td>
                         <td>$<?php echo total_cart_item($order_detail['price'], $order_detail['quantity']); ?></td>
                     </tr>
-                    <tr>
-                    <?php } ?>
+                <?php } ?>
+
+                <tr>
+
 
             </table>
         </div>
@@ -84,14 +92,23 @@
                 <tr>
                     <td>Subtotal</td>
                     <td>$<?php echo total_cart(); ?></td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <div class="payment">
+                            <a href="checkout.php" class="bg-primary border border-primary text-white px-4 py-3 font-medium rounded-md uppercase hover:bg-transparent
+             hover:text-primary transition text-sm w-full block text-center a">
+                                Process to checkout
+                            </a>
+
+                        </div>
+                    </td>
                 </tr>
             </table>
+
         </div>
     </div>
-    <a href="checkout.php" class="bg-primary border border-primary text-white px-4 py-3 font-medium rounded-md uppercase hover:bg-transparent
-             hover:text-primary transition text-sm w-full block text-center">
-                Process to checkout
-            </a>
 
     <a href="#" class="to-top">
         <i class="fas fa-chevron-up"></i>

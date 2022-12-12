@@ -24,10 +24,18 @@
                 <li>
                   <a class="dropdown-item" href="logout.php" class="text-gray-200 hover:text-white transition">Logout</a>
                 </li>
+
               <?php } else { ?>
                 <li><a class="dropdown-item" href="login.php" class="text-gray-200 hover:text-white transition">Login</a></li>
-                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
                 <li><a class="dropdown-item" href="register.php" class="text-gray-200 hover:text-white transition">Register</a></li>
+              <?php } ?>
+              <?php if (isset($_SESSION['user'])) { ?>
+                <li>
+                  <a class="dropdown-item" href="<?php echo BASE_URL . '/admin'; ?>" class="text-gray-200 hover:text-white transition">Admin</a>
+                </li>
               <?php } ?>
             </ul>
           </li>

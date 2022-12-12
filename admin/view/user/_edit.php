@@ -31,35 +31,20 @@
                                 DataTable Example
                             </div>
                             <div class="card-body">
-                            <form action="create.php" method="post">
+                            <form action="edit.php" method="post">
+                            <input type="hidden" name="id" value="<?php echo $user['id']; ?>" />
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Tên</label>
-                                    <input type="text" name="name" class="form-control" id="exampleInputEmail1" 
-                                    aria-describedby="emailHelp" placeholder="Enter name">
+                                    <label for="exampleInputEmail1">Email</label>
+                                    <input type="text" name="email" value="<?php echo $user['email']; ?>"
+                                    class="form-control" id="exampleInputEmail1" 
+                                    aria-describedby="emailHelp" placeholder="Enter Email">
                                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Ảnh</label>
-                                    <input type="text" name="img" class="form-control" id="exampleInputPassword1" 
-                                    placeholder="Img">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Price</label>
-                                    <input type="text" name="price" class="form-control" id="exampleInputPassword1" 
-                                    placeholder="price">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Discount</label>
-                                    <input type="text" name="discount" class="form-control" id="exampleInputPassword1" 
-                                    placeholder="discount">
-                                </div>
-                                <div class="form-group mt-2">
-                                    <label for="exampleInputPassword1">Category</label>
-                                    <select name="category_id" class="form-control">
-                                        <?php foreach ($category_list as $category) { ?>
-                                            <option value="<?php echo $category['id']; ?>"><?php echo $category['name']; ?></option>
-                                        <?php } ?>
-                                    </select>
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="text" name="password" value="<?php echo $user['password']; ?> "
+                                    class="form-control" id="exampleInputPassword1" 
+                                    placeholder="Enter Password">
                                 </div>
                                 <button type="submit" class="btn btn-primary mt-2">Submit</button>
                                 </form>

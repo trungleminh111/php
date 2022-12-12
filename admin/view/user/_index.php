@@ -7,16 +7,17 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Dashboard - SB Admin</title>
-        <link rel="stylesheet" href="../../view/public/admin/css/style.css">
+       <link rel="stylesheet" href="../../view/public/admin/css/style.css">
        <link rel="stylesheet" href="../../view/public/admin/css/styles.css">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
        <script src="../../view/public/admin/js/all.js " crossorigin="anonymous"></script>
     </head>
+   
     <body class="sb-nav-fixed">
        <?php include_once '../view/inc/_navbar.php' ?>
         <div id="layoutSidenav">
-            <?php include_once '../view/inc/_sideleft.php' ?>
+          <?php include_once '../view/inc/_sideleft.php' ?>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
@@ -31,38 +32,42 @@
                                 DataTable Example
                             </div>
                             <div class="card-body">
-                            <form action="create.php" method="post">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Tên</label>
-                                    <input type="text" name="name" class="form-control" id="exampleInputEmail1" 
-                                    aria-describedby="emailHelp" placeholder="Enter name">
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Ảnh</label>
-                                    <input type="text" name="img" class="form-control" id="exampleInputPassword1" 
-                                    placeholder="Img">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Price</label>
-                                    <input type="text" name="price" class="form-control" id="exampleInputPassword1" 
-                                    placeholder="price">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Discount</label>
-                                    <input type="text" name="discount" class="form-control" id="exampleInputPassword1" 
-                                    placeholder="discount">
-                                </div>
-                                <div class="form-group mt-2">
-                                    <label for="exampleInputPassword1">Category</label>
-                                    <select name="category_id" class="form-control">
-                                        <?php foreach ($category_list as $category) { ?>
-                                            <option value="<?php echo $category['id']; ?>"><?php echo $category['name']; ?></option>
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>STT</th>
+                                            <th>Email</th>
+                                            <th>Password</th>
+                                            <th>#</th>
+                                            <th>#</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>STT</th>
+                                            <th>Email</th>
+                                            <th>Password</th>
+                                            <th>#</th>
+                                            <th>#</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <?php $index = 0; ?>
+                                    <?php foreach($user_list as $user) { ?>         
+                                        <tr>
+                                            <td><?php echo ++$index; ?></td>
+                                            <td><?php echo $user['email']; ?></td>
+                                            <td><?php echo $user['password']; ?></td>
+                                            <td>
+                                            <a class="btn btn-primary" href="edit.php?user_id=<?php echo 
+                                            $user['id']; ?>">Edit</a>
+                                            </td>
+                                            <td>
+                                            <a class="btn btn-danger" href="delete.php?user_id=<?php echo 
+                                            $user['id']; ?> ">Delete</a></td>
+                                        </tr>
                                         <?php } ?>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-primary mt-2">Submit</button>
-                                </form>
+                            </div>
                         </div>
                     </div>
                 </main>

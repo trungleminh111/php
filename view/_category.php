@@ -7,115 +7,200 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="./view/public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./view/public/css/style.css">
+    <link rel="stylesheet" href="./view/public/css/home.css">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./public/css/style.css">
 </head>
 
 <body>
+    <style>
+        .mt {
+            margin-top: 200px !important;
+        }
+    </style>
+
     <?php include 'inc/header.php'; ?>
 
-    <?php include 'inc/banner.php'; ?>
-
-    <div class="container-fluid bg-secondary mb-5">
-        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
-            <h1 class="font-weight-semi-bold text-uppercase mb-3">HERMES PARIS</h1>
-            <div class="d-inline-flex">
-                <p class="m-0"><a href="index.html">Home</a></p>
-                <p class="m-0 px-2">-</p>
-                <p class="m-0">HERMES PARIS</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-9 col-md-12">
-        <div class="row pb-3">
-            <div class="col-12 pb-1">
-                <div class="d-flex align-items-center justify-content-between mb-4">
-                    <form action="">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search by name">
-                            <div class="input-group-append">
-                                <span class="input-group-text bg-transparent text-primary">
-                                    <i class="fa fa-search"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </form>
-                    <div class="dropdown ml-4">
-                        <button class="btn border dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Sort by
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="triggerId">
-                            <a class="dropdown-item" href="#">Latest</a>
-                            <a class="dropdown-item" href="#">Popularity</a>
-                            <a class="dropdown-item" href="#">Best Rating</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <?php $product_list = get_products_by_category($_GET['categories_id']); ?>
-                <?php foreach ($product_list as $product) { ?>
-                    <div class="container py-16  ">
-                        <div class="">
-                            <div class="card product-item border-0 mb-4 col-lg-4 col-md-5 col-sm-12 pb-1 ">
-                                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                    <img class="img-fluid w-100 " src="<?php echo $product['img']; ?>" alt="">
-                                </div>
-                                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                    <h6 class="text-truncate mb-3"><?php echo $product['name']; ?></h6>
-                                    <div class="d-flex justify-content-center">
-                                        <h6>$599.00</h6>
-                                        <h6 class="text-muted ml-2"><del><?php echo $product['price']; ?></del></h6>
-                                    </div>
-                                </div>
-                                <div class="card-footer d-flex justify-content-between bg-light border">
-                                    <a href="product_detail.php?id=<?php echo $product['id']; ?>" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
 
-                <?php } ?>
-            </div>
-            <div class="col-12 pb-1">
-                <nav aria-label="Page navigation">
-                    <ul class="pagination justify-content-center mb-3">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                        </li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Next</span>
+    <div class="container mt ">
+        <div class="row ">
+            <div class="col col-lg-3 text-start">
+                <h3>Clothing</h3>
+                <?php $categories_list = get_all_categories() ?>
+                <?php foreach ($categories_list as $categories) { ?>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <input type="hidden" name="category_id" value="<?php echo $categories['id']; ?>">
+                            <a href="category.php?category_id=<?php echo $categories['id']; ?>" class="nav-link text-muted">
+                                <?php echo $categories['name'] ?>
                             </a>
                         </li>
                     </ul>
-                </nav>
+                <?php } ?>
             </div>
+
+            <div class="col col d-flex flex-wrap justify-content-between codinh">
+                <?php $product_list = get_products_by_category($_GET['category_id']) ?>
+                <?php foreach ($product_list as $product) { ?>
+                    <div class="col-12 col-lg-3 col-md-6 col-sm-6">
+                        <div class="card m-2">
+                            <a href="./product-detail.php?id=<?php echo $product['id']; ?>">
+                                <img class="card-img-top" height="300px" src="<?php echo $product['img']; ?>" alt="Product">
+                            </a>
+                            <div class="card-body">
+                                <p class="card-text fw-bold"><?php echo $product['name']; ?></p>
+                                <strong class="text-secondary">
+                                    $<?php echo $product['pricenew']; ?>
+                                    <small>-<?php echo $product['giam']; ?>%</small>
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+
         </div>
     </div>
-    <!-- Shop Product End -->
+    <div>
+        <a href="#" class="to-top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
     </div>
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-light text-muted">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>Company name
+                        </h6>
+                        <p>
+                            Here you can use rows and columns to organize your footer content. Lorem ipsum
+                            dolor sit amet, consectetur adipisicing elit.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Products
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Angular</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">React</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Vue</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Laravel</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Useful links
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Pricing</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Settings</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Orders</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Help</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            info@example.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                        <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
     </div>
-    <?php include 'inc/footer.php'; ?>
 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
+    </script>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
+    </script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $product_list = get_all_products();
+    $category_list = get_all_categories();
     include_once '../view/product/_create.php';
 }
+

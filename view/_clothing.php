@@ -36,7 +36,7 @@
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <input type="hidden" name="category_id" value="<?php echo $categories['id']; ?>">
-                            <a href="./clothing.php?category_id=<?php echo $categories['id']; ?>" class="nav-link text-muted">
+                            <a href="category.php?category_id=<?php echo $categories['id']; ?>" class="nav-link text-muted">
                                 <?php echo $categories['name'] ?>
                             </a>
                         </li>
@@ -45,7 +45,7 @@
             </div>
 
             <div class="col col d-flex flex-wrap justify-content-between codinh">
-                <?php $product_list = get_products_by_category($_GET['category_id']) ?>
+                <?php $product_list = get_all_products() ?>
                 <?php foreach ($product_list as $product) { ?>
                     <div class="col-12 col-lg-3 col-md-6 col-sm-6">
                         <div class="card m-2">

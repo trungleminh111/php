@@ -1,10 +1,17 @@
 <?php
 require_once './core/boot.php';
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    if(!isset($_SESSION['email'])){
+        include('login.php');
+    }
+    else{
+        include('cart.php');
+    }
     if(isset($_SESSION['cart'])){
         $order = array(
             'code' => string_radom(10),
