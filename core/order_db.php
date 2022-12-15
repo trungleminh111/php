@@ -19,7 +19,7 @@ function insert_order($code, $status, $user_id){
 
 //update order
 function update_order($code, $status, $user_id, $id){
-    $sql = "UPDATE `ORDER` SET CODE=:code, STATUS=:status WHERE ID=:id";
+    $sql = "UPDATE `ORDER` SET CODE=:code, USER_ID =:user_id STATUS=:status WHERE ID=:id";
     global $pdo;
     $stmt = $pdo->prepare($sql);
     
@@ -75,12 +75,12 @@ function get_order_list(){
     return $order_list;
 }
 
-function find_order($id){
-    $sql = "SELECT * FROM `ORDER` WHERE ID=:id";
+function find_order($user_id){
+    $sql = "SELECT * FROM `ORDER` WHERE USER_ID=:user_id";
     global $pdo;
     $stmt = $pdo->prepare($sql);
     
-    $stmt->bindParam(':id', $id);
+    $stmt->bindParam(':user_id', $user_id);
     $stmt->execute();
     $stmt->setFetchMode(PDO::FETCH_ASSOC); 
      

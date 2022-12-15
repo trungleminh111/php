@@ -6,6 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./view/public/css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="./view/public/css/bootstrap.min.css">
@@ -21,6 +22,15 @@
         display: flex;
         width: 160px;
     }
+    .input-number{
+    border: 1px solid #ccc !important;
+    
+  }
+  .input-number:hover{
+    background-color: #ff523b;
+    opacity: 0.85;
+    color: white;
+  }
 </style>
     <?php include 'inc/header.php'; ?>
     <!-------------car item details------------->
@@ -58,16 +68,16 @@
                                 <input type="hidden" name="action" value="update">
                                 <input type="hidden" name="value" value="-1">
                                 <input type="hidden" name="productId" value="<?php echo $order_detail['product_id']; ?>">
-                                <button type="submit">-</button>
+                                <button type="submit" class="input-number">-</button>
                             </form>
-                            <div class="h-8 w-10 h flex items-center justify-center">
+                            <div class="h-8 w-10 h flex items-center justify-center" style="text-align: center;">
                                 <?php echo $order_detail['quantity']; ?>
                             </div>
                             <form action="cart.php" method="post" class="h-8 w-8 text-xl flex items-center justify-center cursor-pointer select-none">
                                 <input type="hidden" name="action" value="update">
                                 <input type="hidden" name="value" value="1">
                                 <input type="hidden" name="productId" value="<?php echo $order_detail['product_id']; ?>">
-                                <button type="submit">+</button>
+                                <button type="submit" class="input-number">+</button>
                             </form>
                         </td>
                         <td>$<?php echo total_cart_item($order_detail['price'], $order_detail['quantity']); ?></td>
@@ -82,7 +92,7 @@
         <div class="total-price container">
             <table>
                 <tr>
-                    <td>Subtotal</td>
+                    <td class="">Subtotal</td>
                     <td>$<?php echo total_cart(); ?></td>
                 </tr>
                 <tr>

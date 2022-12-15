@@ -17,27 +17,20 @@
 
         <a class="navbar-brand d-none d-lg-block" href="#">Mr.Trung</a>
         <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <?php if (isset($_SESSION['user'])) { ?>
-                <li>
-                  <a class="dropdown-item" href="logout.php" class="text-gray-200 hover:text-white transition">Logout</a>
-                </li>
+          <li class="nav-item mx-2">
+            <?php
+            if (!isset($_SESSION['user']['user']) && empty($_SESSION['user'])) {
+              echo '<a href="login.php" class="nav-link"><b>Log In</b></a>';
+            } else {
+              echo "Hello, " . htmlspecialchars($_SESSION['user']['userName'], ENT_QUOTES, 'UTF-8');
+              echo '</br></b>';
+              echo  '<a href="logout.php" class=""  style="text-decoration: none; color: rgba(0,0,0,.55);"><b>Log Out</b></a>';
+            }
 
-              <?php } else { ?>
-                <li><a class="dropdown-item" href="login.php" class="text-gray-200 hover:text-white transition">Login</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li><a class="dropdown-item" href="register.php" class="text-gray-200 hover:text-white transition">Register</a></li>
-              <?php } ?>
-              <?php if (isset($_SESSION['user'])) { ?>
-                <li>
-                  <a class="dropdown-item" href="<?php echo BASE_URL . '/admin'; ?>" class="text-gray-200 hover:text-white transition">Admin</a>
-                </li>
-              <?php } ?>
-            </ul>
+            ?>
+           
+             
+         
           </li>
           <li class="nav-item d-flex align-items-center">
             <a href="cart.php" class="nav-link">
@@ -78,6 +71,13 @@
             <a href="contact.php" class="nav-link">
               Contact
             </a>
+          </li>
+          <li class="nav-item mx-2">
+          <?php 
+          if (isset($_SESSION['user']['role']) && ($_SESSION['user']['role']) =='admin') { ?>
+                <a class="nav-link" href="<?php echo BASE_URL . '/admin/product'; ?>" class="text-gray-200 hover:text-white transition">Admin</a>
+               
+              <?php } ?>
           </li>
         </ul>
       </div>

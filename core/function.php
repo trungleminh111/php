@@ -126,3 +126,6 @@ function string_radom($len = 10)
     }
     return $key;
 }
+
+
+

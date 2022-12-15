@@ -109,11 +109,17 @@
         }
     </style>
     <div id="wrapper">
+    
         <form action="login.php" method="POST">
             <i style="color: red;"><?php if (isset($_SESSION['flash_message'])) echo  $_SESSION['flash_message'];
                                     unset($_SESSION['flash_message']); ?></i>
+                                    
             <h3>Đăng nhập</h3>
             <div class="form-group">
+                <?php $user_id = get_all_user()?>
+                <input type="hidden" name="id">
+                <input type="hidden" name="userName">
+                <input type="hidden" name="role">
                 <input type="text" name="email" required>
                 <label for="">Email</label>
             </div>

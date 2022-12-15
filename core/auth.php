@@ -26,11 +26,12 @@ function login($email, $password){
     global $pdo;
 
     $sql = "SELECT * FROM USERS WHERE EMAIL=:email AND PASSWORD=:password";
+  
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':password', $password);
     
-
+   
     $stmt->execute();
     $stmt->setFetchMode(PDO::FETCH_ASSOC); 
      
@@ -43,7 +44,8 @@ function login($email, $password){
             'id' => $row['id'],
             'email' => $row['email'],
             'password' => $row['password'],
-            'role' => $row['role']
+            'role' => $row['role'],
+            'userName' => $row['userName']
         );
     }
 
@@ -125,7 +127,8 @@ function get_all_user(){
         $user_list[] = array(
             'id' => $row['id'],
             'email' => $row['email'],
-            'password' => $row['password']
+            'password' => $row['password'],
+            'userName' => $row['userName']
         );
     }
     

@@ -5,6 +5,7 @@ body{
 .navbar {
   z-index: 99;
 }
+
 .to-top {
   background: white;
   position: fixed;
@@ -156,6 +157,7 @@ body:has(input[name="changeTheme"]:checked){
 .text-secondary{
   color: red !important;
 }
+
 
 /* inpuu number */
 

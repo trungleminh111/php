@@ -3,7 +3,7 @@ require_once 'core/boot.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $is_register_success = true;
-
+    
     if(isset($_POST['email']) && isset($_POST['password'])){
         $user = register($_POST['email'], $_POST['password']);  
         if($user == false){
