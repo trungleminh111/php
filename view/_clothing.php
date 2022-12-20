@@ -30,7 +30,7 @@
     <div class="container mt ">
         <div class="row ">
             <div class="col col-lg-3 text-start">
-                <h3>Clothing</h3>
+                <h3>Category</h3>
                 <?php $categories_list = get_all_categories() ?>
                 <?php foreach ($categories_list as $categories) { ?>
                     <ul class="nav flex-column">

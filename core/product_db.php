@@ -164,7 +164,7 @@ function get_products_by_name($name)
 {
     global $pdo;
 
-    $sql = "SELECT SELECT id, name,description,category_id, price, img ,discount, round(((discount/price)*100),0) as giam,
+    $sql = "SELECT id, name,description,category_id, price, img ,discount, round(((discount/price)*100),0) as giam,
     sum(price-discount) as pricenew FROM PRODUCTS WHERE NAME LIKE :name group by id
     order by id";
     $stmt = $pdo->prepare($sql);
@@ -189,13 +189,15 @@ function get_products_by_name($name)
             'description' => $row['description'],
             'price' => $row['price'],
             'img' => $row['img'],
-            'category_id' => $row['category_id']
+            'giam' => $row['giam'],
+            'pricenew' => $row['pricenew'],
+            'category_id' => $row['category_id'],
+
         );
     }
 
     return $product_list;
 }
-
 /**
  * Get product related
  */

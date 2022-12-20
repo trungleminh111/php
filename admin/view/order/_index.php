@@ -36,9 +36,9 @@
                                     <thead>
                                         <tr>
                                             <th>STT</th>
-                                            <th>Img</th>
-                                            <th>Name</th>
-                                            <th>#</th>
+                                            <th>code</th>
+                                            <th>user_id</th>
+                                            <th>trạng thái</th>
                                             <th>#</th>
                                         </tr>
                                     </thead>

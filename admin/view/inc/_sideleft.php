@@ -51,7 +51,7 @@
                             <div class="collapse" id="collapseOrder" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="<?php echo BASE_URL . '/admin/order'; ?>">All</a>
-                                    
+                                   
                                 </nav>
                             </div>
                         </div>

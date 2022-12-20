@@ -65,6 +65,8 @@
                                             <td>
                                             <a class="btn btn-danger" href="delete.php?category_id=<?php echo 
                                             $category['id']; ?> ">Delete</a></td>
+
+                                            
                                         </tr>
                                         <?php } ?>
                             </div>

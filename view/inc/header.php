@@ -21,6 +21,7 @@
             <?php
             if (!isset($_SESSION['user']['user']) && empty($_SESSION['user'])) {
               echo '<a href="login.php" class="nav-link"><b>Log In</b></a>';
+              
             } else {
               echo "Hello, " . htmlspecialchars($_SESSION['user']['userName'], ENT_QUOTES, 'UTF-8');
               echo '</br></b>';
